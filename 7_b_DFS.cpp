@@ -16,13 +16,13 @@ void dfs(int node, vector<bool> &visited, vector<vector<int>> &adj)
 
 int main()
 {
-    int v, e;
+    int n, e;
     cout << "Enter the number of vertices : ";
-    cin >> v;
+    cin >> n;
     cout << "Enter the number of edges : ";
     cin >> e;
 
-    vector<vector<int>> adj(v);
+    vector<vector<int>> adj(n);
 
     cout << "Enter " << e << " edges (u v format , 0-indexed) : \n";
     for (int i = 0; i < e; i++)
@@ -33,10 +33,10 @@ int main()
         adj[v].push_back(u);
     }
 
-    vector<bool> visited(v, false);
+    vector<bool> visited(n, false);
     int count = 0;
 
-    for (int node = 0; node < v; node++)
+    for (int node = 0; node < n; node++)
     {
         if (!visited[node])
         {
