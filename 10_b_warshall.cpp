@@ -2,9 +2,12 @@
 #include <vector>
 using namespace std;
 
-void floyd(vector<vector<int>> &mat)
+void warshall(vector<vector<int>> &mat)
 {
     int n = mat.size();
+
+    for (int i = 0; i < n; i++)
+        mat[i][i] = 1;
 
     for (int k = 0; k < n; k++)
     {
@@ -12,13 +15,8 @@ void floyd(vector<vector<int>> &mat)
         {
             for (int j = 0; j < n; j++)
             {
-                if (mat[i][k] != -1 && mat[k][j] != -1)
-                {
-                    if (mat[i][j] == -1)
-                        mat[i][j] = mat[i][k] + mat[k][j];
-                    else
-                        mat[i][j] = min(mat[i][j], mat[i][k] + mat[k][j]);
-                }
+                if (mat[i][k] && mat[k][j])
+                    mat[i][j] = 1;
             }
         }
     }
@@ -32,24 +30,23 @@ int main()
 
     vector<vector<int>> graph(n, vector<int>(n));
 
-    cout << "Enter the adjacency matrix (use -1 for no edge): \n";
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < n; j++)
-            cin >> graph[i][j];
-    }
-
-    floyd(graph);
-
-    cout << "\nShortest Distance Matrix : \n";
+    cout << "Enter the adjacency matrix (0=no edge , 1=edge) : \n";
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
         {
-            if (graph[i][j] == -1)
-                cout << "INF\t";
-            else
-                cout << graph[i][j] << "\t";
+            cin >> graph[i][j];
+        }
+    }
+
+    warshall(graph);
+
+    cout << "Transitive Closure : \n";
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cout << " " << graph[i][j];
         }
         cout << endl;
     }
