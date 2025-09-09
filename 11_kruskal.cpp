@@ -51,7 +51,7 @@ int main()
         if (u != v)
         {
             parent[v] = u;
-            cout << "Edge - " << "(" << a << "," << b << "): " << min << endl;
+            cout << "Edge - " << ne++ << "(" << a << "," << b << "): " << min << endl;
             mincost = mincost + min;
         }
         cost[a][b] = cost[b][a] = INF;
