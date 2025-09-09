@@ -70,5 +70,6 @@ int main()
 
     vector<vector<bool>> board(n, vector<bool>(n, false));
     queen(board, 0);
+    
     return 0;
 }
