@@ -10,7 +10,7 @@ int main()
     cout << "Enter the number of vertices : ";
     cin >> n;
 
-    vector<vector<int>> g(n, vector<int>(n));
+    vector<vector<int>> g(n, vector<int>(n)); ///////////
     cout << "Enter the adjacency matrix (use 999 for no edge) : \n";
     for (int i = 0; i < n; i++)
     {
@@ -25,7 +25,7 @@ int main()
     cin >> src;
 
     vector<int> dist(n, INF);
-    vector<int> visited(n, 0);
+    vector<bool> visited(n, false);
 
     dist[src] = 0;
 
