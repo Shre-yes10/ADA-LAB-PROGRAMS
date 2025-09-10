@@ -6,9 +6,9 @@ using namespace std;
 
 int main()
 {
-    int n;
-    cout << "Enter the number of vertices : ";
-    cin >> n;
+    int n;                                                            // TC - O(V^2)-adjacency matrix+linear search
+    cout << "Enter the number of vertices : ";                        //      - O((V+E)log V) - min heap            
+    cin >> n;                                                         // SC - O(V^2)
 
     vector<vector<int>> g(n, vector<int>(n)); ///////////
     cout << "Enter the adjacency matrix (use 999 for no edge) : \n";

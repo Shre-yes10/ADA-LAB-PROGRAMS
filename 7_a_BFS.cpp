@@ -1,8 +1,8 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
-#include <queue>
-using namespace std;
+#include <queue>                                                    // TC - O(V+E)
+using namespace std;                                                // SC - O(V)
 
 int main()
 {

@@ -5,8 +5,8 @@
 using namespace std;
 
 void merge(int a[], int low, int high, int mid)
-{
-    int i = low, j = mid + 1, k = 0;
+{                                                                   // TC - O(n log n) -best , average , worst cases
+    int i = low, j = mid + 1, k = 0;                                // SC - O(n)
     int temp[high - low + 1];
 
     while (i <= mid && j <= high)
@@ -73,7 +73,7 @@ int main()
     double time = (double)(end - start) / CLOCKS_PER_SEC;
     cout << "\nTime taken for sorting " << n << " elements is: " << time << " seconds";
 
-    ofstream file("mergesort.txt", ofstream::app);
+    ofstream file("mergesort.txt", ofstream::app); 
     for (i = 10000; i <= 100000; i += 2000)
     {
         n = i;

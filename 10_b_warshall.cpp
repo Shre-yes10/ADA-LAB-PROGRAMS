@@ -4,8 +4,8 @@ using namespace std;
 
 void warshall(vector<vector<int>> &mat)
 {
-    int n = mat.size();
-
+    int n = mat.size();                                                         // TC - O(V^3)
+                                                                                // SC - O(V^2)
     for (int i = 0; i < n; i++)
         mat[i][i] = 1;
 
@@ -28,7 +28,7 @@ int main()
     cout << "Enter the number of vertices : ";
     cin >> n;
 
-    vector<vector<int>> graph(n, vector<int>(n));
+    vector<vector<int>> graph(n, vector<int>(n)); /////////////
 
     cout << "Enter the adjacency matrix (0=no edge , 1=edge) : \n";
     for (int i = 0; i < n; i++)

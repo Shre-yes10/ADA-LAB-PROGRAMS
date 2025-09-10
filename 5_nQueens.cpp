@@ -5,8 +5,8 @@ void print(int board[], int n)
 {
     for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < n; j++)
-        {
+        for (int j = 0; j < n; j++)                                    // TC - O(N!)
+        {                                                              // SC - O(N)         
             if (board[i] == j)
                 cout << " Q ";
             else

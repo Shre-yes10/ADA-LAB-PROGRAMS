@@ -4,7 +4,8 @@ using namespace std;
 
 void dfs(int node, vector<bool> &visited, vector<vector<int>> &adj)
 {
-    visited[node] = true;
+    visited[node] = true;                                                                   // TC - O(V+E)
+    using namespace std;                                                                    // SC - O(V+E)
     for (int neighbour : adj[node])
     {
         if (!visited[neighbour])
@@ -49,6 +50,6 @@ int main()
         cout << "The Graph is Connected\n";
     else
         cout << "The Graph is Disconnected\n";
- 
+
     return 0;
 }

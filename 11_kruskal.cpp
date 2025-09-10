@@ -13,8 +13,8 @@ int find(int i)
     return i;
 }
 
-int main()
-{
+int main()                                                          // TC - O(E log E)
+{                                                                   // SC - O(V+E)
     int n, mincost = 0, ne = 1;
 
     cout << "Enter the number of vertices : ";
@@ -51,7 +51,7 @@ int main()
         if (u != v)
         {
             parent[v] = u;
-            cout << "Edge - " << ne++ << "(" << a << "," << b << "): " << min << endl;
+            cout << "Edge - " << ne++ << " (" << a << "," << b << "): " << min << endl;
             mincost = mincost + min;
         }
         cost[a][b] = cost[b][a] = INF;

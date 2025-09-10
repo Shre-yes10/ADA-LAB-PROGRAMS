@@ -5,16 +5,20 @@ using namespace std;
 
 #define MAX 10
 
-int main()
-{
+int main()                                                          // TC - O(N!)
+{                                                                   // SC - O(N^2)    
     int n, cost[MAX][MAX];
     cout << "Enter number of cities: ";
     cin >> n;
 
     cout << "Enter cost matrix:\n";
     for (int i = 0; i < n; i++)
+    {
         for (int j = 0; j < n; j++)
+        {
             cin >> cost[i][j];
+        }
+    }
 
     int cities[MAX];
     for (int i = 0; i < n; i++)
@@ -33,21 +37,24 @@ int main()
 
     bool visited[MAX] = {false};
     int total = 0, current = 0;
+
     visited[0] = true;
     for (int k = 1; k < n; k++)
     {
         int next = -1, best = INT_MAX;
         for (int j = 0; j < n; j++)
+        {
             if (!visited[j] && cost[current][j] < best)
             {
                 best = cost[current][j];
                 next = j;
             }
+        }
         visited[next] = true;
         total += best;
         current = next;
     }
-    total += cost[current][0];
+    total = total + cost[current][0];
 
     cout << "\nOptimal TSP Cost = " << minCost;
     cout << "\nApproximation (Nearest Neighbor) Cost = " << total;

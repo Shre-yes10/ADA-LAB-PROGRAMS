@@ -7,8 +7,8 @@ using namespace std;
 int cost[MAX][MAX];
 
 int main()
-{
-    int n, mincost = 0, ne = 1;
+{                                                                              // TC - O(E log V)
+    int n, mincost = 0, ne = 1;                                                // SC - O(V+E)
 
     cout << "Enter the number of vertices : ";
     cin >> n;
@@ -45,8 +45,8 @@ int main()
             }
         }
 
-        cout << "Edge - " << ne++ << "(" << a << "," << b << "): " << min << endl;
         visited[b] = 1;
+        cout << "Edge - " << ne++ << " (" << a << "," << b << "): " << min << endl;
         mincost = mincost + min;
     }
     cout << "Minimum Cost : " << mincost << endl;

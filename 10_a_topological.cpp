@@ -5,8 +5,8 @@ using namespace std;
 
 int main()
 {
-    int n, e;
-    cout << "Enter the number of vertices and edges : ";
+    int n, e;                                                                       // TC - O(V+E)
+    cout << "Enter the number of vertices and edges : ";                            // SC - O(V+E)            
     cin >> n >> e;
 
     vector<vector<int>> adj(n);

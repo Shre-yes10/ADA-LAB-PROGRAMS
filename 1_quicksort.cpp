@@ -5,9 +5,9 @@
 using namespace std;
 
 int partition(int a[], int l, int h)
-{
-    int pivot = a[l];
-    int i = l, j = h, temp;
+{                                                       // TC - O(n log n) - best and average case
+    int pivot = a[l];                                   //      - O(n^2) - worst case  
+    int i = l, j = h, temp;                             // SC - O(log n)
 
     while (i < j)
     {

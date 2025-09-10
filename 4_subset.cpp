@@ -5,9 +5,9 @@ int n, d, a[10], x[10], cnt = 0, flag = 0;
 
 void subset(int i, int sum)
 {
-    if (sum == d)
-    {
-        flag = 1;
+    if (sum == d)                                                  // TC - O(2^N) - backtracking/brutefore
+    {                                                              //    - O(nxd) - DP 
+        flag = 1;                                                  // SC - O(N)
         cout << "{";
         for (int k = 0; k < cnt; k++)
             cout << " " << x[k] << " ";

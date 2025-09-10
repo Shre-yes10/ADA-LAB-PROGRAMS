@@ -5,8 +5,8 @@ using namespace std;
 
 int dp[MAX][MAX];
 
-int knapsack(int n, int W, int profit[], int weight[])
-{
+int knapsack(int n, int W, int profit[], int weight[])                  // TC - O(nxW)
+{                                                                       // SC - O(nxW)
     for (int i = 1; i <= n; i++)
     {
         for (int w = 1; w <= W; w++)
