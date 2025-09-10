@@ -4,9 +4,8 @@ using namespace std;
 
 void dfs(int node, vector<bool> &visited, vector<vector<int>> &adj)
 {
-    visited[node] = true;                                                                   // TC - O(V+E)
-    using namespace std;                                                                    // SC - O(V+E)
-    for (int neighbour : adj[node])
+    visited[node] = true;                                                    // TC - O(V+E)
+    for (int neighbour : adj[node])                                          // SC - O(V+E)
     {
         if (!visited[neighbour])
         {
